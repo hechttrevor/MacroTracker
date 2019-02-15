@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,387 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MacroTacker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MacroLogo" translatesAutoresizingMaskIntoConstraints="NO" id="0sp-VF-doq">
+                                <rect key="frame" x="82.5" y="28.5" width="210" height="210"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="F31-Az-gkv"/>
+                                    <constraint firstAttribute="width" constant="210" id="VDa-es-sSl"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MacroTracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0j-wr-mLo">
+                                <rect key="frame" x="128.5" y="250.5" width="118.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3l-VC-bi8" customClass="SAButton" customModule="MacroTacker" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="427" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2Fo-ki-Ftv"/>
+                                    <constraint firstAttribute="width" constant="200" id="gAe-Ll-puD"/>
+                                </constraints>
+                                <state key="normal" title="View Consumed Today"/>
+                                <connections>
+                                    <segue destination="W4M-f5-fYz" kind="presentation" modalTransitionStyle="crossDissolve" id="odu-5j-JVo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8FP-3r-U7W" customClass="SAButton" customModule="MacroTacker" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="487" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="O0o-m1-Aov"/>
+                                    <constraint firstAttribute="width" constant="200" id="Wbd-bJ-Xp9"/>
+                                </constraints>
+                                <state key="normal" title="View Remaining Today"/>
+                                <connections>
+                                    <segue destination="g3s-i1-Jwx" kind="presentation" modalTransitionStyle="crossDissolve" id="dec-2F-KpW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUv-JG-kpf" customClass="SAButton" customModule="MacroTacker" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="547" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="7cR-jv-XcO"/>
+                                    <constraint firstAttribute="height" constant="40" id="9wZ-VJ-uep"/>
+                                </constraints>
+                                <state key="normal" title="Enter a New Food"/>
+                                <connections>
+                                    <segue destination="ebu-0n-i7v" kind="presentation" modalTransitionStyle="crossDissolve" id="eVJ-pc-bfY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8X-nZ-kZE" customClass="SAButton" customModule="MacroTacker" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="367" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Wgk-7l-tU2"/>
+                                    <constraint firstAttribute="width" constant="200" id="X8n-Pc-WaL"/>
+                                </constraints>
+                                <state key="normal" title="What Have You Eaten?"/>
+                                <connections>
+                                    <segue destination="1Uu-ft-dv3" kind="presentation" modalTransitionStyle="crossDissolve" id="cqf-fc-ygS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.30588235289999999" green="0.57254901960000004" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="f0j-wr-mLo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0N4-d8-8Ty"/>
+                            <constraint firstItem="0sp-VF-doq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dal-Ri-pCD"/>
+                            <constraint firstItem="X3l-VC-bi8" firstAttribute="top" secondItem="V8X-nZ-kZE" secondAttribute="bottom" constant="20" id="EQq-xn-CzH"/>
+                            <constraint firstItem="f0j-wr-mLo" firstAttribute="top" secondItem="0sp-VF-doq" secondAttribute="bottom" constant="12" id="KPg-pX-e7T"/>
+                            <constraint firstItem="8FP-3r-U7W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NOC-MW-dP4"/>
+                            <constraint firstItem="0sp-VF-doq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-200" id="Ocg-R5-PCC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eUv-JG-kpf" secondAttribute="bottom" constant="80" id="Q70-Qv-tyw"/>
+                            <constraint firstItem="eUv-JG-kpf" firstAttribute="top" secondItem="8FP-3r-U7W" secondAttribute="bottom" constant="20" id="aGt-IX-IUi"/>
+                            <constraint firstItem="V8X-nZ-kZE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eL0-68-d2r"/>
+                            <constraint firstItem="8FP-3r-U7W" firstAttribute="top" secondItem="X3l-VC-bi8" secondAttribute="bottom" constant="20" id="fTw-Tx-aeX"/>
+                            <constraint firstItem="eUv-JG-kpf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mYn-6B-N6o"/>
+                            <constraint firstItem="X3l-VC-bi8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rvE-l3-54Q"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="118" y="27"/>
+        </scene>
+        <!--View Controller5-->
+        <scene sceneID="xf3-ya-cIt">
+            <objects>
+                <viewController id="ebu-0n-i7v" customClass="ViewController5" customModule="MacroTacker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Up-bN-gLV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MacroTracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6j5-d3-WLP">
+                                <rect key="frame" x="128.5" y="250.5" width="118.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MacroLogo" translatesAutoresizingMaskIntoConstraints="NO" id="n9Y-RC-dBy">
+                                <rect key="frame" x="82.5" y="28.5" width="210" height="210"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="86t-km-ABR"/>
+                                    <constraint firstAttribute="width" constant="210" id="Pde-Nt-0oU"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zww-Jm-etS" customClass="SAButton" customModule="MacroTacker" customModuleProvider="target">
+                                <rect key="frame" x="97.5" y="542" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="bYt-6b-wzQ"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="our-Ax-nXx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThG-TW-QQ3" customClass="SAButton" customModule="MacroTacker" customModuleProvider="target">
+                                <rect key="frame" x="197.5" y="542" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="YsK-Fr-60G"/>
+                                </constraints>
+                                <state key="normal" title="Add Food"/>
+                                <connections>
+                                    <action selector="onClickAddFood:" destination="ebu-0n-i7v" eventType="touchUpInside" id="rJe-8l-nCW"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Food's Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MRQ-k7-iAf">
+                                <rect key="frame" x="87.5" y="302" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="UxV-XF-oi4"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Calories" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IoK-3O-gbx">
+                                <rect key="frame" x="87.5" y="347" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="vFM-gr-AnZ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Carbs" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HYb-lT-Ofl">
+                                <rect key="frame" x="87.5" y="437" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="kdt-gc-yOm"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Fat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bfz-9e-q3a">
+                                <rect key="frame" x="87.5" y="482" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="23L-gz-BR4"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Protein" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5aM-ch-WHS">
+                                <rect key="frame" x="87.5" y="392" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="WhP-Ax-Win"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bfz-9e-q3a" firstAttribute="top" secondItem="HYb-lT-Ofl" secondAttribute="bottom" constant="15" id="2fE-ZZ-3vr"/>
+                            <constraint firstItem="bfz-9e-q3a" firstAttribute="centerX" secondItem="2Up-bN-gLV" secondAttribute="centerX" id="433-0j-rF7"/>
+                            <constraint firstItem="6j5-d3-WLP" firstAttribute="top" secondItem="n9Y-RC-dBy" secondAttribute="bottom" constant="12" id="5tP-mj-cca"/>
+                            <constraint firstItem="IoK-3O-gbx" firstAttribute="centerX" secondItem="2Up-bN-gLV" secondAttribute="centerX" id="Dzo-aN-nLk"/>
+                            <constraint firstItem="5aM-ch-WHS" firstAttribute="top" secondItem="IoK-3O-gbx" secondAttribute="bottom" constant="15" id="FQ5-dA-qWq"/>
+                            <constraint firstItem="5aM-ch-WHS" firstAttribute="centerX" secondItem="2Up-bN-gLV" secondAttribute="centerX" id="HMb-4a-jED"/>
+                            <constraint firstItem="n9Y-RC-dBy" firstAttribute="centerX" secondItem="2Up-bN-gLV" secondAttribute="centerX" id="J32-EP-XAD"/>
+                            <constraint firstItem="ThG-TW-QQ3" firstAttribute="top" secondItem="bfz-9e-q3a" secondAttribute="bottom" constant="30" id="NQM-bB-MNb"/>
+                            <constraint firstItem="HYb-lT-Ofl" firstAttribute="top" secondItem="5aM-ch-WHS" secondAttribute="bottom" constant="15" id="Tg1-uR-R68"/>
+                            <constraint firstItem="zww-Jm-etS" firstAttribute="centerX" secondItem="2Up-bN-gLV" secondAttribute="centerX" constant="-50" id="VpY-nl-Pnb"/>
+                            <constraint firstItem="MRQ-k7-iAf" firstAttribute="centerX" secondItem="2Up-bN-gLV" secondAttribute="centerX" id="X6C-wp-db3"/>
+                            <constraint firstItem="HYb-lT-Ofl" firstAttribute="centerX" secondItem="2Up-bN-gLV" secondAttribute="centerX" id="gCj-H9-3K2"/>
+                            <constraint firstItem="ThG-TW-QQ3" firstAttribute="centerX" secondItem="2Up-bN-gLV" secondAttribute="centerX" constant="50" id="ku3-58-pIH"/>
+                            <constraint firstItem="zww-Jm-etS" firstAttribute="top" secondItem="bfz-9e-q3a" secondAttribute="bottom" constant="30" id="mLG-Bx-JEX"/>
+                            <constraint firstItem="MRQ-k7-iAf" firstAttribute="top" secondItem="6j5-d3-WLP" secondAttribute="bottom" constant="30" id="oUU-XI-50f"/>
+                            <constraint firstItem="n9Y-RC-dBy" firstAttribute="centerY" secondItem="2Up-bN-gLV" secondAttribute="centerY" constant="-200" id="qYg-qW-Tcl"/>
+                            <constraint firstItem="6j5-d3-WLP" firstAttribute="centerX" secondItem="2Up-bN-gLV" secondAttribute="centerX" id="vhd-Gu-cjd"/>
+                            <constraint firstItem="IoK-3O-gbx" firstAttribute="top" secondItem="MRQ-k7-iAf" secondAttribute="bottom" constant="15" id="vnE-sC-dTc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="b4V-Dq-iHq"/>
+                    </view>
+                    <connections>
+                        <outlet property="caloriesText" destination="IoK-3O-gbx" id="uXm-JU-xqD"/>
+                        <outlet property="carbsText" destination="HYb-lT-Ofl" id="DS4-Ao-pNN"/>
+                        <outlet property="fatText" destination="bfz-9e-q3a" id="mlF-dB-Eo8"/>
+                        <outlet property="foodNameText" destination="MRQ-k7-iAf" id="ov4-bm-5Un"/>
+                        <outlet property="proteinText" destination="5aM-ch-WHS" id="iff-96-9ZD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ThB-cn-eA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2946" y="27"/>
+        </scene>
+        <!--View Controller3-->
+        <scene sceneID="RkK-mX-YOg">
+            <objects>
+                <viewController id="W4M-f5-fYz" customClass="ViewController3" customModule="MacroTacker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NN6-Xn-IZb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MacroTracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfn-ZW-8s2">
+                                <rect key="frame" x="128.5" y="250.5" width="118.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MacroLogo" translatesAutoresizingMaskIntoConstraints="NO" id="KaB-ci-a4w">
+                                <rect key="frame" x="82.5" y="28.5" width="210" height="210"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="7Uh-FO-S1h"/>
+                                    <constraint firstAttribute="height" constant="210" id="Fld-x8-ciS"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IoA-ad-KYQ" customClass="SAButton" customModule="MacroTacker" customModuleProvider="target">
+                                <rect key="frame" x="170.5" y="318.5" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="R01-j7-9Eo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IoA-ad-KYQ" firstAttribute="centerY" secondItem="NN6-Xn-IZb" secondAttribute="centerY" id="7i0-du-4us"/>
+                            <constraint firstItem="KaB-ci-a4w" firstAttribute="centerX" secondItem="NN6-Xn-IZb" secondAttribute="centerX" id="FD6-Uc-uMZ"/>
+                            <constraint firstItem="KaB-ci-a4w" firstAttribute="centerY" secondItem="NN6-Xn-IZb" secondAttribute="centerY" constant="-200" id="Hnd-5W-fTZ"/>
+                            <constraint firstItem="Mfn-ZW-8s2" firstAttribute="top" secondItem="KaB-ci-a4w" secondAttribute="bottom" constant="12" id="KuB-vk-9sK"/>
+                            <constraint firstItem="IoA-ad-KYQ" firstAttribute="centerX" secondItem="NN6-Xn-IZb" secondAttribute="centerX" id="cDB-zh-SFk"/>
+                            <constraint firstItem="Mfn-ZW-8s2" firstAttribute="centerX" secondItem="NN6-Xn-IZb" secondAttribute="centerX" id="kYY-BO-am9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="31b-TG-j02"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SXo-V5-Esi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1530" y="27"/>
+        </scene>
+        <!--View Controller2-->
+        <scene sceneID="zDr-KU-2RG">
+            <objects>
+                <viewController id="1Uu-ft-dv3" customClass="ViewController2" customModule="MacroTacker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="90C-on-IbA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MacroLogo" translatesAutoresizingMaskIntoConstraints="NO" id="l9h-3A-bIj">
+                                <rect key="frame" x="82.5" y="28.5" width="210" height="210"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="GBU-cq-cBP"/>
+                                    <constraint firstAttribute="width" constant="210" id="df3-gv-E3W"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MacroTracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZd-Os-Boe">
+                                <rect key="frame" x="128.5" y="250.5" width="118.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sD4-nX-LGx" customClass="SAButton" customModule="MacroTacker" customModuleProvider="target">
+                                <rect key="frame" x="97.5" y="368.5" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Dqh-Zb-sBl"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="71d-GI-tV2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQd-S7-EBm" customClass="SAButton" customModule="MacroTacker" customModuleProvider="target">
+                                <rect key="frame" x="197.5" y="368.5" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Ygv-kc-TNt"/>
+                                </constraints>
+                                <state key="normal" title="Enter Food"/>
+                                <connections>
+                                    <action selector="onClickFood:" destination="aOx-Vy-O0P" eventType="touchUpInside" id="fnK-x8-Dkz"/>
+                                    <action selector="onClickFood:" destination="1Uu-ft-dv3" eventType="touchUpInside" id="ouG-MM-LsE"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="fdf" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter The Food You've Eaten" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Pc-LK-5oV" customClass="SATextField" customModule="MacroTacker" customModuleProvider="target">
+                                <rect key="frame" x="50" y="318.5" width="275" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="o3f-9a-P2v"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.30588235289999999" green="0.57254901960000004" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="2Pc-LK-5oV" firstAttribute="centerX" secondItem="90C-on-IbA" secondAttribute="centerX" id="47w-R9-OIe"/>
+                            <constraint firstItem="l9h-3A-bIj" firstAttribute="centerY" secondItem="90C-on-IbA" secondAttribute="centerY" constant="-200" id="4qa-s8-VFl"/>
+                            <constraint firstItem="oQd-S7-EBm" firstAttribute="centerX" secondItem="90C-on-IbA" secondAttribute="centerX" constant="50" id="6ec-eh-YHR"/>
+                            <constraint firstItem="l9h-3A-bIj" firstAttribute="centerX" secondItem="90C-on-IbA" secondAttribute="centerX" id="8Ce-XG-yLj"/>
+                            <constraint firstItem="cZd-Os-Boe" firstAttribute="centerX" secondItem="90C-on-IbA" secondAttribute="centerX" id="NZy-QZ-EAa"/>
+                            <constraint firstItem="cZd-Os-Boe" firstAttribute="centerX" secondItem="90C-on-IbA" secondAttribute="centerX" id="QkA-n8-Vin"/>
+                            <constraint firstItem="cZd-Os-Boe" firstAttribute="top" secondItem="l9h-3A-bIj" secondAttribute="bottom" constant="12" id="bEO-3h-9qA"/>
+                            <constraint firstItem="2Pc-LK-5oV" firstAttribute="centerY" secondItem="90C-on-IbA" secondAttribute="centerY" id="dGT-xg-hOi"/>
+                            <constraint firstItem="sD4-nX-LGx" firstAttribute="centerY" secondItem="90C-on-IbA" secondAttribute="centerY" constant="50" id="dPG-W7-2J6"/>
+                            <constraint firstItem="oQd-S7-EBm" firstAttribute="centerY" secondItem="90C-on-IbA" secondAttribute="centerY" constant="50" id="quW-zH-vok"/>
+                            <constraint firstItem="sD4-nX-LGx" firstAttribute="centerX" secondItem="90C-on-IbA" secondAttribute="centerX" constant="-50" id="rab-kY-How"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uPS-mk-qCg"/>
+                    </view>
+                    <connections>
+                        <outlet property="EnterFood" destination="2Pc-LK-5oV" id="o7W-lb-XBa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0uH-y9-NPZ" sceneMemberID="firstResponder"/>
+                <exit id="aOx-Vy-O0P" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="27"/>
+        </scene>
+        <!--View Controller4-->
+        <scene sceneID="wsf-8H-9gz">
+            <objects>
+                <viewController id="g3s-i1-Jwx" customClass="ViewController4" customModule="MacroTacker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ujs-eA-Wyt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MacroTracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qK7-dO-HdM">
+                                <rect key="frame" x="128.5" y="250.5" width="118.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MacroLogo" translatesAutoresizingMaskIntoConstraints="NO" id="VEP-ZN-Zmq">
+                                <rect key="frame" x="82.5" y="28.5" width="210" height="210"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="b6p-xd-ljF"/>
+                                    <constraint firstAttribute="width" constant="210" id="ean-8t-nfv"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNy-XI-jIv" customClass="SAButton" customModule="MacroTacker" customModuleProvider="target">
+                                <rect key="frame" x="170.5" y="318.5" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="0ig-bU-Pcs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qK7-dO-HdM" firstAttribute="top" secondItem="VEP-ZN-Zmq" secondAttribute="bottom" constant="12" id="1KL-YL-sGn"/>
+                            <constraint firstItem="bNy-XI-jIv" firstAttribute="centerX" secondItem="ujs-eA-Wyt" secondAttribute="centerX" id="CFf-uO-ElC"/>
+                            <constraint firstItem="qK7-dO-HdM" firstAttribute="centerX" secondItem="ujs-eA-Wyt" secondAttribute="centerX" id="H5U-dC-vH5"/>
+                            <constraint firstItem="bNy-XI-jIv" firstAttribute="centerY" secondItem="ujs-eA-Wyt" secondAttribute="centerY" id="dqa-dv-Imj"/>
+                            <constraint firstItem="VEP-ZN-Zmq" firstAttribute="centerX" secondItem="ujs-eA-Wyt" secondAttribute="centerX" id="eFe-38-m3q"/>
+                            <constraint firstItem="VEP-ZN-Zmq" firstAttribute="centerY" secondItem="ujs-eA-Wyt" secondAttribute="centerY" constant="-200" id="wkg-8g-8jT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EIf-kW-Efl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jeh-8p-KJm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2236" y="27"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MacroLogo" width="1496" height="1494"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0ig-bU-Pcs"/>
+    </inferredMetricsTieBreakers>
 </document>
