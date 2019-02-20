@@ -18,6 +18,9 @@ class ViewController5: UIViewController {
     @IBOutlet weak var proteinText: UITextField!
     @IBOutlet weak var carbsText: UITextField!
     @IBOutlet weak var fatText: UITextField!
+    
+
+    
 
     
     override func viewDidLoad() {
@@ -28,7 +31,6 @@ class ViewController5: UIViewController {
     }
     
     @IBAction func onClickAddFood(_ sender: Any) {
-
         let foodTxt = String(foodNameText.text!)
         if foodTxt.count == 0 {
             showAlert(title:"Input Error", message: "Please enter the food's name")
@@ -51,13 +53,40 @@ class ViewController5: UIViewController {
             return
         }
         
-        addToDataBase(foodTxt: foodTxt, calariesNumb: calariesNumb, proteinNumb: proteinNumb, carbsNumb: carbsNumb, fatNumb: fatNumb)
+        ref.child("Foods/\(foodTxt)").observeSingleEvent(of: .value, with: { (snapshot) in
+            if(snapshot.exists()){
+                self.showAlertYesNo(title: "\(foodTxt) already exists", message: "Proceeding will overwrite \(foodTxt)'s information", foodTxt: foodTxt, calariesNumb: calariesNumb, proteinNumb: proteinNumb, carbsNumb: carbsNumb, fatNumb: fatNumb)
+
+                
+            }else{
+                self.addToDataBase(foodTxt: foodTxt, calariesNumb: calariesNumb, proteinNumb: proteinNumb, carbsNumb: carbsNumb, fatNumb: fatNumb)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+
     }
     
     func addToDataBase(foodTxt:String, calariesNumb: Double, proteinNumb: Double, carbsNumb: Double, fatNumb: Double){
         self.ref.child("Foods/\(foodTxt)").setValue(["calories": calariesNumb,"protein": proteinNumb, "carbs": carbsNumb, "fat": fatNumb])
         showAlert(title: "Success", message: "\(foodTxt) added to the food list")
     }
+    
+    
+    func showAlertYesNo(title : String, message: String, foodTxt:String, calariesNumb: Double, proteinNumb: Double, carbsNumb: Double, fatNumb: Double){
+        var refreshAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            self.addToDataBase(foodTxt: foodTxt, calariesNumb: calariesNumb, proteinNumb: proteinNumb, carbsNumb: carbsNumb, fatNumb: fatNumb)
+        }))
+
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+           return
+        }))
+
+        present(refreshAlert, animated: true, completion: nil)
+    }
+    
     
     func showAlert(title : String, message: String){
         let alertController = UIAlertController(title: title, message:

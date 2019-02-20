@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "429896F8B0F3392F13ADAEABAC6701F5"
+               BlueprintIdentifier = "7CE72859A134F2ED601B1B5329694E0C"
                BuildableName = "Pods_MacroTacker.framework"
                BlueprintName = "Pods-MacroTacker"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "429896F8B0F3392F13ADAEABAC6701F5"
+            BlueprintIdentifier = "7CE72859A134F2ED601B1B5329694E0C"
             BuildableName = "Pods_MacroTacker.framework"
             BlueprintName = "Pods-MacroTacker"
             ReferencedContainer = "container:Pods.xcodeproj">

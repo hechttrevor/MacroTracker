@@ -13,6 +13,7 @@ class ViewController2: UIViewController {
 
     var ref : DatabaseReference!
     let backgroundImageView = UIImageView()
+    var username = "tehe"
     
     @IBOutlet weak var EnterFood: SATextField!
     
@@ -20,11 +21,16 @@ class ViewController2: UIViewController {
         super.viewDidLoad()
         setBackground()
         ref = Database.database().reference()
+        print(username)
+        let vc = ViewController()
+        username = vc.finalUsername
+
         // Do any additional setup after loading the view.
     }
     
 
     @IBAction func onClickFood(_ sender: Any) {
+        print(username)
         let foodName = String(EnterFood.text!)
         if foodName.count == 0{
             showAlert(title: "Input Error", message: "Please enter a food")

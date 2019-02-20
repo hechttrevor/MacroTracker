@@ -10,12 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
    
+    var finalUsername:String = ""
     let backgroundImageView = UIImageView()
    
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
+        print(finalUsername)
+        
     }
+    
+    
 
     func setBackground(){
         view.addSubview(backgroundImageView)
